@@ -22,7 +22,7 @@ checkTokens().then(async () => {
 
     // Деньги в тезере
     await sendFetchGet(
-        `users/${SITE.includes("localhost") ? 2 : 1}/balance`,
+        `users/${SITE.includes("localhost") ? 2 : 3}/balance`,
         getCookieValue("access"),
         (data) => {
             if (data.errors.length > 0) {
