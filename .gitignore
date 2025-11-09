@@ -1,0 +1,11 @@
+.idea/
+.venv/
+poetry.lock
+*.pyc
+.env
+core/project/settings/local.py
+static/*
+media/*
+!static/.gitkeep
+*.sqlite3
+docker_compose/storages.yaml
