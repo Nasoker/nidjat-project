@@ -30,7 +30,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['193.168.49.68', 'nidjatstore.ru', 'nidjatstore.store', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['212.67.13.239', 'nidjatstore.ru', 'localhost', '0.0.0.0']
 
 # Application definition
 
@@ -147,6 +147,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom settings
 
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 AUTH_USER_MODEL = 'users.User'
