@@ -15,14 +15,14 @@ checkTokens().then(async () => {
     const clientsDebtsLink = document.querySelector("#link-debts");
     const clientsSum = document.querySelector("#clients-balances");
     const productsDebtsSum = document.querySelector("#sum-product-debts");
-    const avelDividends = document.querySelector("#avel-dividends");
+    const dividends = document.querySelector("#dividends");
     const moneyInTezer = document.querySelector("#money-in-tezer");
 
     const parsedToken = parseJwt(getCookieValue("access"));
 
     // Деньги в тезере
     await sendFetchGet(
-        `users/${SITE.includes("localhost") ? 2 : 37}/balance`,
+        `users/${SITE.includes("localhost") ? 2 : 1}/balance`,
         getCookieValue("access"),
         (data) => {
             if (data.errors.length > 0) {
@@ -33,15 +33,15 @@ checkTokens().then(async () => {
         }
     )
 
-    // Дивиденды Авель
+    // Дивиденды
     await sendFetchGet(
-        `users/${SITE.includes("localhost") ? 3 : 125}/balance`,
+        `users/${SITE.includes("localhost") ? 3 : 2}/balance`,
         getCookieValue("access"),
         (data) => {
             if (data.errors.length > 0) {
                 alert(data.errors[0])
             } else {
-                avelDividends.textContent = change(data.data.balance);
+                dividends.textContent = change(data.data.balance);
             }
         }
     )
